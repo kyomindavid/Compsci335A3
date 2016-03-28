@@ -1,0 +1,145 @@
+/* 	
+	Compsci 335 A3
+	Author: Kyomin Ku
+	UPI: kku031 
+*/
+
+html {
+	background: black;
+}
+
+h1 {
+	background: blue;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+li { 
+	display: inline;
+	margin: 60px;
+	color: white;
+}
+
+#stock {
+	text-align: center;
+}
+
+#searchbar {
+	width: 500px;
+}
+
+#searchbox {
+	background: yellow;
+	width: 80px;
+	height: 20px;
+	font-family: arial;
+}
+
+#nowavailable {
+	font-size: 50px;
+	font-family: arial;
+	color: red;
+	text-align: center;
+	margin: 10px;
+	padding-top: 30px;
+}
+
+#resultof {
+	color: white;
+	text-align: left;
+	font-size: 25px;
+	font-family: arial;
+	margin: 2px;
+	text-align: center;
+}
+
+#table {
+	background: white;
+	font-size: 30px;
+	font-family: arial;
+	text-align: center;
+}
+
+ul {
+	background: blue;
+	color: white;
+	text-align: center;
+}
+
+#register {
+	background: white;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: left;
+	font-size: 20px;
+
+}
+.register {
+	padding-left: 80px;
+	text-align: center;
+}
+
+#username {
+	width: 400px;
+}
+
+#password {
+	width: 400px;
+}
+
+#address {
+	width: 700px;
+	height: 20%:
+}
+
+#registerbutton {
+	position: absolute;
+}
+
+.no {
+	color: red;
+	font-size: 15px;
+	
+}
+
+#comments {
+	background-color: white;
+	padding-left: 40px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-right: 40px;
+}
+
+#registermessage {
+	font-size: 25px;
+	text-align: right;
+	padding-right: 20px;
+}
+
+#version {
+	font-size: 20px;
+	text-align: right;
+	padding-right: 20px;
+}
+
+#comment {
+	width: 800px;
+	height: 200px;
+	text-align: center;
+}
+
+#name {
+	
+}
+
+.feedback {
+	font-size: 20px;
+	font-family: arial;
+}
+
+#recentcomments {
+	font-size: 30px;
+	font-weight: bold;
+	
+}

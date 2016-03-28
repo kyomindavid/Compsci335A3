@@ -1,0 +1,146 @@
+<!--Compsci 335 A3-->
+<!--Author: Kyomin Ku-->
+<!-- UPI: kku031 -->
+
+<!DOCTYPE html>
+<!-- Javascripts and CSS used -->
+<script src="yourshop.js"></script>
+<script src="joinshop.js"></script>
+<script src="yourcomments.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+<html>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<header>
+		<title> La Boutique Cassée </title>
+		<img src="http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/logo" alt="logo" style="width:100%">
+
+		<h1>
+			<li id="yourshop" onclick="yourshop()" style="color:gold"> Your shop </li>
+			<li id="joinshop" onclick="joinshop()"> Join the shop </li>
+			<li id="yourcomments" onclick="yourcomments()"> Your comments </li>
+		</h1>
+	</header>
+
+	<body>
+	<!-- //////////////////////  Your shop  //////////////////////-->
+		<div id="stock">
+			<!-- Dropdown Menu -->
+			<select id="items" onchange="stateChange()"> 
+				<option value="books"> Books </option>
+				<option value="blurays"> Bluerays </option>
+			</select>
+			
+			<!-- Search Bar -->
+			<input id="searchbar" type="text" placeholder="Enter a keyword here..."/>
+			<input id="searchbutton" type="submit" value="Search" onclick = "search()"/>
+			
+			<p id="nowavailable"> Now Available!</p>
+			<p id="resultof"></p>
+			
+			<!-- Content Table -->
+			<table id="table" align="center"></table>	
+			<script>
+				window.onload = stateChange();
+				$(document).ready(function(){
+					$("#register").hide();
+					$("#comments").hide();
+				});
+			</script>
+		</div>
+	
+	
+	<!-- //////////////////////  Join the shop  //////////////////////-->	
+		<div id="register">
+			<!-- User Name -->
+			<p class="register"> Username: 
+				<input id="username" type="text" placeholder="Your Username..."/>
+				<nobr id="nousername" class="no"></nobr>
+			</p>
+			
+			<!-- Password -->
+			<p class="register"> Password: 
+				<input id="password" type="password" placeholder="Your Password..."/>
+				<nobr id="nopassword" class="no"></nobr>
+			</p>
+			
+			<!-- Address -->
+			<p class="register"> Address: 
+				<textarea id="address" rows="3" cols="100" type="text" placeholder="Type your address here..."></textarea>
+				<nobr id="noaddress" class="no"></nobr>
+			</p>
+			<p class="register">
+				<input id="registerbutton" type="submit" value="Register!" onclick = "register()"/>
+			</p>
+			
+			<br></br>
+			<br></br>
+			
+			<!-- Registration -->
+			<p id="registermessage"> (Registeration Status) </p>
+			<p id="version"></p>
+			<script>
+				window.onload = version();
+			</script>
+		</div>
+	
+	
+	<!-- //////////////////////  Your comments  //////////////////////-->
+		<div id="comments" align="center">
+			<!-- Feedback -->
+			<p class="feedback"> Your feedback here is greatly appreciated: </p>
+			<textarea id="comment" rows="3" cols="100" type="text" placeholder="Comment here..."></textarea>
+			<br></br>
+			
+			<!-- Name -->
+			<p class="feedback"> Your name: 
+				<input id="name" type="text" placeholder="Enter your name here..."/>
+				<input id="commentbutton" type="submit" value="POST!" onclick = "postComment()"/>
+			</p>
+			
+			<br></br>
+			<br></br>
+			
+			<!-- Recent comments -->
+			<p id="recentcomments"> Recent comments: </p>
+			<p id="setofcomments"></p>
+			
+			<script>
+				window.onload = showComments();
+			</script>
+		</div>
+	
+	
+	<!-- /////////////////////////////////////////////////////////////-->	
+		<script>
+			$(document).ready(function(){
+				$("#yourshop").click(function(){
+					$("#stock").show();
+					$("#register").hide();
+					$("#comments").hide();
+				});
+			});
+			
+			$(document).ready(function(){
+				$("#joinshop").click(function(){
+					$("#stock").hide();
+					$("#register").show();
+					$("#comments").hide();
+				});
+			});
+			
+			$(document).ready(function(){
+				$("#yourcomments").click(function(){
+					$("#stock").hide();
+					$("#register").hide();
+					$("#comments").show();
+				});
+			});
+		</script>
+	</body>
+	
+	<ul> &copy Compsci335 Kyomin Ku 2015 </ul>
+
+</html> 
+
+
